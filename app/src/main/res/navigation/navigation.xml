@@ -1,0 +1,56 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.lymors.whatsapp.frgmant.TitleFragment"
+        android:label="Home Fragment">
+        <action
+            android:id="@+id/action_titleFragment_to_game_Fragment"
+            app:destination="@+id/gameFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/gameFragment"
+        android:name="com.lymors.whatsapp.frgmant.GameFragment"
+        android:label="fragment_game"
+        tools:layout="@layout/fragment_game">
+        <action
+            android:id="@+id/action_gameFragment_to_gameOverFragment22"
+            app:destination="@id/gameOverFragment2" />
+        <action
+            android:id="@+id/action_gameFragment_to_gameWonFragment2"
+            app:destination="@id/gameWonFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/gameOverFragment2"
+        android:name="com.lymors.whatsapp.frgmant.GameOverFragment"
+        android:label="GameOverFragment" >
+        <action
+            android:id="@+id/action_gameOverFragment2_to_gameFragment"
+            app:destination="@id/gameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameWonFragment"
+        android:name="com.lymors.whatsapp.frgmant.GameWonFragment"
+        android:label="GameWonFragment" >
+        <action
+            android:id="@+id/action_gameWonFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.lymors.whatsapp.frgmant.AboutFragment"
+        android:label="@string/title_about_trivia" >
+        <argument
+            android:name="numCorrect"
+            app:argType="integer" />
+        <argument
+            android:name="numQuestions"
+            app:argType="integer" />
+    </fragment>
+
+</navigation>
